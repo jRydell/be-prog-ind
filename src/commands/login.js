@@ -1,13 +1,14 @@
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
+const BASE_URL = require("../api/apiConfig");
 
 // Define the path to the auth.json file
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 async function login(email, password) {
   try {
-    const response = await axios.post(`${process.env.API_URL}/users/login`, {
+    const response = await axios.post(`${BASE_URL}/users/login`, {
       email,
       password,
     });
