@@ -2,10 +2,9 @@
   "name": "be-prog-ind",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/cli.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/cli.js"
   },
   "keywords": [],
   "author": "",
