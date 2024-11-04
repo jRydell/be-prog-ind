@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { program } = require("commander");
 const login = require("./commands/login");
 const listEvents = require("./commands/listEvents");
