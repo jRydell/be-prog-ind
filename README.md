@@ -12,3 +12,7 @@ password: 12345
 ### List all events
 
 npm start list
+
+### List event details
+
+npm start event-details <eventId>

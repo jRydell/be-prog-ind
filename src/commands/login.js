@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 const BASE_URL = require("../api/apiConfig");
 
-// Define the path to the auth.json file
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 async function login(email, password) {
@@ -13,9 +12,8 @@ async function login(email, password) {
       password,
     });
     const token = response.data.token;
-    console.log("Login successful! Your token:", token);
+    console.log("Login successful!");
 
-    // Save the token to auth.json
     const authData = {
       token: token,
     };
@@ -23,7 +21,6 @@ async function login(email, password) {
     fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2), {
       encoding: "utf8",
     });
-    console.log("Token saved to auth.json.");
 
     return token;
   } catch (error) {

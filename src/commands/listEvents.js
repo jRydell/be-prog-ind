@@ -5,7 +5,6 @@ const BASE_URL = require("../api/apiConfig");
 
 // Define the path to the auth.json file
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
-console.log("🚀 ~ authFilePath:", authFilePath);
 
 async function listEvents() {
   try {
@@ -21,10 +20,13 @@ async function listEvents() {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    console.log("Public Events:");
+
     response.data
       .filter((event) => event.isPublic)
       .forEach((event) => {
-        console.log(event.title);
+        console.log(event.title, "Id:", event._id);
       });
   } catch (error) {
     if (error.response) {
