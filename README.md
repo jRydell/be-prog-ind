@@ -1,5 +1,7 @@
 # be-prog-ind
 
+A CLI based program for event handling.
+
 ## Commands
 
 ### Login
