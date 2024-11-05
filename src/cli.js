@@ -3,6 +3,7 @@ const login = require("./commands/login");
 const listEvents = require("./commands/listEvents");
 const eventDetails = require("./commands/eventDetails");
 const registerUser = require("./commands/registerUser");
+const removeUser = require("./commands/removeUser");
 
 program
   .command("login <email> <password>")
@@ -28,6 +29,13 @@ program
   .description("Register a user to an event")
   .action((eventId, userId) => {
     registerUser(eventId, userId);
+  });
+
+program
+  .command("remove-user <eventId> <userId>")
+  .description("Remove a participant from an event")
+  .action((eventId, userId) => {
+    removeUser(eventId, userId);
   });
 
 program.parse(process.argv);
