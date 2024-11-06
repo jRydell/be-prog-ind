@@ -31,7 +31,7 @@ async function eventDetails() {
     });
 
     const event = eventResponse.data;
-    console.log("Event Details:");
+    console.log("Event Details:\n");
     console.log(`Title: ${event.title}`);
     console.log(`Description: ${event.description}`);
     console.log(`Date: ${event.date}`);

@@ -17,11 +17,11 @@ npm start list
 
 ### List event details:
 
-npm start event-details <eventId>
+npm start event-details
 
 ### Register user:
 
-npm start register-user <eventId> <userId>
+npm start register-user
 
 ### Remove user:
 

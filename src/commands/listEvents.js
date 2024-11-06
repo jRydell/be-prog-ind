@@ -18,12 +18,12 @@ async function listEvents() {
       },
     });
 
-    console.log("Public Events:");
+    console.log("Public Events:\n");
 
     response.data
       .filter((event) => event.isPublic)
       .forEach((event) => {
-        console.log(event.title, "Id:", event._id);
+        console.log(event.title);
       });
   } catch (error) {
     if (error.response) {

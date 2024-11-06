@@ -1,11 +1,10 @@
 const { program } = require("commander");
-
 const login = require("./commands/login");
 const listEvents = require("./commands/listEvents");
 const eventDetails = require("./commands/eventDetails");
-const registerUser = require("./commands/registerUser");
 const removeUser = require("./commands/removeUser");
 const loginPrompt = require("./prompts/loginPrompt");
+const registerUser = require("./commands/registerUser");
 
 program
   .command("login")
@@ -28,11 +27,9 @@ program
   });
 
 program
-  .command("register-user <eventId> <userId>")
+  .command("register-user")
   .description("Register a user to an event")
-  .action((eventId, userId) => {
-    registerUser(eventId, userId);
-  });
+  .action(registerUser);
 
 program
   .command("remove-user <eventId> <userId>")
