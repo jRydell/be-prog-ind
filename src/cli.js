@@ -32,10 +32,8 @@ program
   .action(registerUser);
 
 program
-  .command("remove-user <eventId> <userId>")
+  .command("remove-user")
   .description("Remove a user from an event")
-  .action((eventId, userId) => {
-    removeUser(eventId, userId);
-  });
+  .action(removeUser);
 
 program.parse(process.argv);

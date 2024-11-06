@@ -10,7 +10,7 @@ async function selectEvent(events) {
     {
       type: "list",
       name: "selectedEventId",
-      message: "Select an event to register user to:",
+      message: "Select an event to remove from:",
       choices: eventChoices,
     },
   ]);
@@ -21,14 +21,14 @@ async function selectEvent(events) {
 async function selectUser(users) {
   const userChoices = users.map((user) => ({
     name: user.name,
-    value: user._id, //
+    value: user._id,
   }));
 
   const { selectedUserId } = await inquirer.prompt([
     {
       type: "list",
       name: "selectedUserId",
-      message: "Select user to register for event:",
+      message: "Select user to remove from event:",
       choices: userChoices,
     },
   ]);
