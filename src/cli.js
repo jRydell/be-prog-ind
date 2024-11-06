@@ -4,12 +4,14 @@ const listEvents = require("./commands/listEvents");
 const eventDetails = require("./commands/eventDetails");
 const registerUser = require("./commands/registerUser");
 const removeUser = require("./commands/removeUser");
+const loginPrompt = require("./prompts/loginPrompt");
 
 program
-  .command("login <email> <password>")
+  .command("login")
   .description("Login and get an authorization token")
-  .action((email, password) => {
-    login(email, password);
+  .action(async () => {
+    const { email, password } = await loginPrompt();
+    await login(email, password);
   });
 
 program
