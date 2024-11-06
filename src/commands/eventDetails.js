@@ -18,7 +18,6 @@ async function eventDetails(eventId) {
       },
     });
 
-    // Display event details
     const event = response.data;
     console.log("Event Details:");
     console.log(`Title: ${event.title}`);

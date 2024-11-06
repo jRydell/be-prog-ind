@@ -33,7 +33,7 @@ program
 
 program
   .command("remove-user <eventId> <userId>")
-  .description("Remove a participant from an event")
+  .description("Remove a user from an event")
   .action((eventId, userId) => {
     removeUser(eventId, userId);
   });
