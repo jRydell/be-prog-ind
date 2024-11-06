@@ -4,7 +4,7 @@ A CLI based program for event handling.
 Using Axios, Commander and Inquirer.
 
 ## Set up
-Clone and rund npm install
+Clone and run npm install
 
 ## Commands
 
