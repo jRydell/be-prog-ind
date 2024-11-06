@@ -1,6 +1,10 @@
 # be-prog-ind
 
 A CLI based program for event handling.
+Using Axios, Commander and Inquirer.
+
+## Set up
+Clone and rund npm install
 
 ## Commands
 
