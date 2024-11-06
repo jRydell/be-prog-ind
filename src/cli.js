@@ -1,4 +1,5 @@
 const { program } = require("commander");
+
 const login = require("./commands/login");
 const listEvents = require("./commands/listEvents");
 const eventDetails = require("./commands/eventDetails");
@@ -8,7 +9,7 @@ const loginPrompt = require("./prompts/loginPrompt");
 
 program
   .command("login")
-  .description("Login and get an authorization token")
+  .description("User login")
   .action(async () => {
     const { email, password } = await loginPrompt();
     await login(email, password);
@@ -20,10 +21,10 @@ program
   .action(listEvents);
 
 program
-  .command("event-details <eventId>")
+  .command("event-details")
   .description("List details for a specific event")
-  .action((eventId) => {
-    eventDetails(eventId);
+  .action(async () => {
+    await eventDetails();
   });
 
 program

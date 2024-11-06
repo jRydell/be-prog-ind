@@ -6,7 +6,7 @@ A CLI based program for event handling.
 
 ### Login
 
-npm start login <username> <password>
+npm start login
 
 username: fil
 password: 12345

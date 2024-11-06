@@ -2,23 +2,35 @@ const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
 const BASE_URL = require("../api/apiConfig");
+const inquirer = require("inquirer");
+const eventPrompt = require("../prompts/eventPrompt");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
-async function eventDetails(eventId) {
+async function eventDetails() {
   try {
     const authData = JSON.parse(
       fs.readFileSync(authFilePath, { encoding: "utf8" })
     );
     const token = authData.token;
 
-    const response = await axios.get(`${BASE_URL}/events/${eventId}`, {
+    const response = await axios.get(`${BASE_URL}/events`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
-    const event = response.data;
+    const events = response.data.filter((event) => event.isPublic);
+
+    const { eventId } = await eventPrompt(events);
+
+    const eventResponse = await axios.get(`${BASE_URL}/events/${eventId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const event = eventResponse.data;
     console.log("Event Details:");
     console.log(`Title: ${event.title}`);
     console.log(`Description: ${event.description}`);
