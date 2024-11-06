@@ -25,4 +25,4 @@ npm start register-user
 
 ### Remove user:
 
-npm start remove-user <eventId> <userId>
+npm start remove-user

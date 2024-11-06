@@ -22,9 +22,7 @@ program
 program
   .command("event-details")
   .description("List details for a specific event")
-  .action(async () => {
-    await eventDetails();
-  });
+  .action(eventDetails);
 
 program
   .command("register-user")
