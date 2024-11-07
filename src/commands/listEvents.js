@@ -5,6 +5,10 @@ const BASE_URL = require("../api/apiConfig");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
+/**
+ * Fetches and displays all public events
+ */
+
 async function listEvents() {
   try {
     const authData = JSON.parse(

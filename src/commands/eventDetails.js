@@ -7,6 +7,9 @@ const eventPrompt = require("../prompts/eventPrompt");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
+/**
+ * Fetches and displays details of a selected public event.
+ */
 async function eventDetails() {
   try {
     const authData = JSON.parse(

@@ -6,6 +6,9 @@ const BASE_URL = require("../api/apiConfig");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
+/**
+ * Registers a user for a public event.
+ */
 async function registerUser() {
   try {
     const authData = JSON.parse(

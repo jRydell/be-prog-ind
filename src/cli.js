@@ -5,33 +5,41 @@ const eventDetails = require("./commands/eventDetails");
 const removeUser = require("./commands/removeUser");
 const loginPrompt = require("./prompts/loginPrompt");
 const registerUser = require("./commands/registerUser");
+const menu = require("./prompts/menuPrompt");
 
-program
-  .command("login")
-  .description("User login")
-  .action(async () => {
-    const { email, password } = await loginPrompt();
-    await login(email, password);
-  });
+/**
+ * Main function that runs the CLI application.
+ */
+async function main() {
+  let choice = "";
 
-program
-  .command("list")
-  .description("List all public events")
-  .action(listEvents);
+  while (choice !== "exit") {
+    choice = await menu();
 
-program
-  .command("event-details")
-  .description("List details for a specific event")
-  .action(eventDetails);
+    switch (choice) {
+      case "login":
+        const { email, password } = await loginPrompt();
+        await login(email, password);
+        break;
+      case "list":
+        await listEvents();
+        break;
+      case "event-details":
+        await eventDetails();
+        break;
+      case "register-user":
+        await registerUser();
+        break;
+      case "remove-user":
+        await removeUser();
+        break;
+      case "exit":
+        console.log("Thank you for playing...");
+        break;
+      default:
+        console.log("Invalid choice");
+    }
+  }
+}
 
-program
-  .command("register-user")
-  .description("Register a user to an event")
-  .action(registerUser);
-
-program
-  .command("remove-user")
-  .description("Remove a user from an event")
-  .action(removeUser);
-
-program.parse(process.argv);
+main();

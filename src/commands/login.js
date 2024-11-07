@@ -5,6 +5,9 @@ const BASE_URL = require("../api/apiConfig");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
+/**
+ * Logs in a user with the provided email and password.
+ */
 async function login(email, password) {
   try {
     const response = await axios.post(`${BASE_URL}/users/login`, {
