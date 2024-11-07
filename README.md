@@ -9,8 +9,10 @@ Clone the repository, open it and and run npm install
 
 ## How to:
 Before starting you have to clone, install and run this.
-### npm start
+https://github.com/RobinNygren/event-planning-api
 
+### npm start
+Start program
 
 Select options from the menu.
 
