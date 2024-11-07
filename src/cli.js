@@ -1,9 +1,9 @@
-const login = require("./commands/login");
-const listEvents = require("./commands/listEvents");
-const eventDetails = require("./commands/eventDetails");
-const removeUser = require("./commands/removeUser");
+const login = require("./functions/login");
+const listEvents = require("./functions/listEvents");
+const eventDetails = require("./functions/eventDetails");
+const removeUser = require("./functions/removeUser");
 const loginPrompt = require("./prompts/loginPrompt");
-const registerUser = require("./commands/registerUser");
+const registerUser = require("./functions/registerUser");
 const menu = require("./prompts/menuPrompt");
 
 /**
