@@ -7,11 +7,11 @@ Using javascript, Inquirer and Axios.
 
 Clone the repository, open it and and run npm install
 
-## How to:
 Before starting you have to clone, install and run this.
 https://github.com/RobinNygren/event-planning-api
 
 ## start program
+
 Use npm start to run the program.
 
 Select options from the menu, choose exit to stop running the program.
