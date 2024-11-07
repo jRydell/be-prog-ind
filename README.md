@@ -13,6 +13,7 @@ Clone and run npm install
 npm start login
 
 username: johan
+
 password: 12345
 
 ### List all events:
