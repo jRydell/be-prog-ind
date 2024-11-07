@@ -13,6 +13,7 @@ async function removeUser() {
     );
     const token = authData.token;
 
+    // Get events and select one
     const eventResponse = await axios.get(`${BASE_URL}/events`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -22,15 +23,34 @@ async function removeUser() {
     const events = eventResponse.data.filter((event) => event.isPublic);
     const selectedEventId = await selectEvent(events);
 
-    const userResponse = await axios.get(`${BASE_URL}/users`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    // Get participant IDs for the selected event
+    const eventDetailsResponse = await axios.get(
+      `${BASE_URL}/events/${selectedEventId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-    const users = userResponse.data;
+    const participantIds = eventDetailsResponse.data.participants;
+
+    // Fetch full user details for each participant ID
+    const users = await Promise.all(
+      participantIds.map(async (id) => {
+        const userResponse = await axios.get(`${BASE_URL}/users/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        return userResponse.data;
+      })
+    );
+
+    // Select user to remove from the event
     const selectedUserId = await selectUser(users);
 
+    // Remove the selected user from the event participants
     await axios.delete(
       `${BASE_URL}/events/${selectedEventId}/participants/${selectedUserId}`,
       {

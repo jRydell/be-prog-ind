@@ -10,7 +10,7 @@ async function selectEvent(events) {
     {
       type: "list",
       name: "selectedEventId",
-      message: "Select an event to register user to:",
+      message: "Select event to register user to:",
       choices: eventChoices,
     },
   ]);
