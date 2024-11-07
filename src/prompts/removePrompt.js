@@ -10,7 +10,7 @@ async function selectEvent(events) {
     {
       type: "list",
       name: "selectedEventId",
-      message: "Select event to remove from:",
+      message: "Select event to remove from:\n",
       choices: eventChoices,
     },
   ]);
@@ -28,7 +28,7 @@ async function selectUser(users) {
     {
       type: "list",
       name: "selectedUserId",
-      message: "Select user to remove from event:",
+      message: "Select user to remove from event:\n",
       choices: userChoices,
     },
   ]);

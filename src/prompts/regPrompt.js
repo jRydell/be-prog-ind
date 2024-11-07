@@ -10,7 +10,7 @@ async function selectEvent(events) {
     {
       type: "list",
       name: "selectedEventId",
-      message: "Select event to register user to:",
+      message: "Select event to register user to:\n",
       choices: eventChoices,
     },
   ]);
@@ -28,7 +28,7 @@ async function selectUser(users) {
     {
       type: "list",
       name: "selectedUserId",
-      message: "Select user to register for event:",
+      message: "Select user to register for event:\n",
       choices: userChoices,
     },
   ]);

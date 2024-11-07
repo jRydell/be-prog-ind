@@ -5,7 +5,7 @@ function eventPrompt(events) {
     {
       type: "list",
       name: "eventId",
-      message: "Select event to view details:",
+      message: "Select event to view details:\n",
       choices: events.map((event) => ({
         name: event.title,
         value: event._id,
