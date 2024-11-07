@@ -5,11 +5,12 @@ Using javascript, Inquirer and Axios.
 
 ## Set up
 
-Clone and run npm install
+Clone the repository, open it and and run npm install
 
 ## How to:
-
+Before starting you have to clone, install and run this.
 ### npm start
+
 
 Select options from the menu.
 
