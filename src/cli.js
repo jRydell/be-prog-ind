@@ -34,10 +34,10 @@ async function main() {
         await removeUser();
         break;
       case "exit":
-        console.log("Thank you for playing...");
+        console.log("Thank you for playing...\n");
         break;
       default:
-        console.log("Invalid choice");
+        console.log("Invalid choice\n");
     }
   }
 }
