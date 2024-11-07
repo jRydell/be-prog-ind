@@ -38,7 +38,8 @@ async function removeUser() {
     const participantIds = eventDetailsResponse.data.participants;
 
     if (participantIds.length === 0) {
-      console.log("Error: No participants found for this event.");
+      console.log("\n");
+      console.log("Error: No participants found for this event.\n");
       return;
     }
 
@@ -63,17 +64,21 @@ async function removeUser() {
         },
       }
     );
-
-    console.log("User removed successfully!");
+    console.log("\n");
+    console.log("User removed successfully!\n");
   } catch (error) {
     if (error.response) {
+      console.log("\n");
       console.error(
         `Error: ${error.response.status} - ${JSON.stringify(
           error.response.data
         )}`
       );
+      console.log("\n");
     } else {
+      console.log("\n");
       console.error("Error removing user:", error.message);
+      console.log("\n");
     }
   }
 }

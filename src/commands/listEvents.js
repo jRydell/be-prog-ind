@@ -21,7 +21,7 @@ async function listEvents() {
         Authorization: `Bearer ${token}`,
       },
     });
-
+    console.log("\n");
     console.log("Public Events:\n");
 
     response.data
@@ -29,15 +29,20 @@ async function listEvents() {
       .forEach((event) => {
         console.log(event.title);
       });
+    console.log("\n");
   } catch (error) {
     if (error.response) {
+      console.log("\n");
       console.error(
         `Error: ${error.response.status} - ${JSON.stringify(
           error.response.data
         )}`
       );
+      console.log("\n");
     } else {
+      console.log("\n");
       console.error("Error fetching events:", error.message);
+      console.log("\n");
     }
   }
 }

@@ -15,7 +15,8 @@ async function login(email, password) {
       password,
     });
     const token = response.data.token;
-    console.log("Login successful!");
+    console.log("\n");
+    console.log("Login successful!\n");
 
     const authData = {
       token: token,
@@ -27,7 +28,9 @@ async function login(email, password) {
 
     return token;
   } catch (error) {
+    console.log("\n");
     console.error("Login failed:", error.response?.data || error.message);
+    console.log("\n");
   }
 }
 

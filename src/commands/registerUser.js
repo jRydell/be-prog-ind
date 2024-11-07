@@ -44,17 +44,21 @@ async function registerUser() {
         },
       }
     );
-
-    console.log("User registered successfully!");
+    console.log("\n");
+    console.log("User registered successfully!\n");
   } catch (error) {
     if (error.response) {
+      console.log("\n");
       console.error(
         `Error: ${error.response.status} - ${JSON.stringify(
           error.response.data
         )}`
       );
+      console.log("\n");
     } else {
+      console.log("\n");
       console.error("Error registering user:", error.message);
+      console.log("\n");
     }
   }
 }

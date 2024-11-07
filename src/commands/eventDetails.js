@@ -34,6 +34,7 @@ async function eventDetails() {
     });
 
     const event = eventResponse.data;
+    console.log("\n");
     console.log("Event Details:\n");
     console.log(`Title: ${event.title}`);
     console.log(`Description: ${event.description}`);
@@ -46,15 +47,20 @@ async function eventDetails() {
     console.log(
       `Organizers: ${event.organizers.map((org) => org.name).join(", ")}`
     );
+    console.log("\n");
   } catch (error) {
     if (error.response) {
+      console.log("\n");
       console.error(
         `Error: ${error.response.status} - ${JSON.stringify(
           error.response.data
         )}`
       );
+      console.log("\n");
     } else {
+      console.log("\n");
       console.error("Error fetching event details:", error.message);
+      console.log("\n");
     }
   }
 }
