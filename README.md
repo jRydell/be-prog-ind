@@ -1,7 +1,7 @@
 # be-prog-ind
 
 A CLI based program for event handling.
-Using Axios, Commander and Inquirer.
+Using Commander, Inquirer and Axios.
 
 ## Set up
 Clone and run npm install
