@@ -1,7 +1,7 @@
 # be-prog-ind
 
 A CLI based program for event handling.
-Using Commander, Inquirer and Axios.
+Using javascript, Inquirer and Axios.
 
 ## Set up
 
