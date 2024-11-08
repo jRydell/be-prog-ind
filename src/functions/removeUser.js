@@ -65,7 +65,7 @@ async function removeUser() {
       }
     );
     console.log("\n");
-    console.log("User removed successfully!\n");
+    console.log(chalk.green("User removed successfully!\n"));
   } catch (error) {
     if (error.response) {
       console.log("\n");
