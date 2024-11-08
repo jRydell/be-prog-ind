@@ -10,7 +10,7 @@ async function loginPrompt() {
     {
       type: "password",
       name: "password",
-      message: "Enter your password",
+      message: "Enter your password:",
       mask: "*",
     },
   ];
