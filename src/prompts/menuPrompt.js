@@ -11,7 +11,7 @@ async function menu() {
         { name: "All public events", value: "list" },
         { name: "Event details", value: "event-details" },
         { name: "Register users", value: "register-user" },
-        { name: "Remove users", value: "remove-user" },
+        { name: "Remove users\n", value: "remove-user" },
         { name: "Exit", value: "exit" },
       ],
     },
