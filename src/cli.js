@@ -5,13 +5,16 @@ const removeUser = require("./functions/removeUser");
 const loginPrompt = require("./prompts/loginPrompt");
 const registerUser = require("./functions/registerUser");
 const menu = require("./prompts/menuPrompt");
+const chalk = require("chalk");
 
 /**
  * Main function that runs the CLI application.
  */
 async function main() {
   let choice = "";
-
+  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _  \n"));
+  console.log(chalk.green("       Welcome\n"));
+  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _  \n"));
   while (choice !== "exit") {
     choice = await menu();
 
@@ -34,11 +37,12 @@ async function main() {
         break;
       case "exit":
         console.log("\n");
-        console.log("Thank you for playing...\n");
+        console.log(chalk.green("Thank you for playing...\n"));
+
         break;
       default:
-        console.log("\n");
-        console.log("Invalid choice\n");
+        console.log(chalk.green("\n"));
+        console.log(chalk.red("Invalid choice\n"));
     }
   }
 }

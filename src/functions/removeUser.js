@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { selectEvent, selectUser } = require("../prompts/removePrompt");
 const BASE_URL = require("../api/apiConfig");
-
+const chalk = require("chalk");
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 /**
@@ -39,7 +39,7 @@ async function removeUser() {
 
     if (participantIds.length === 0) {
       console.log("\n");
-      console.log("Error: No participants found for this event.\n");
+      console.log(chalk.red("Error: No participants found for this event.\n"));
       return;
     }
 

@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 const BASE_URL = require("../api/apiConfig");
-
+const chalk = require("chalk");
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 /**
@@ -22,7 +22,7 @@ async function listEvents() {
       },
     });
     console.log("\n");
-    console.log("Public Events:\n");
+    console.log(chalk.green("Public Events:\n"));
 
     response.data
       .filter((event) => event.isPublic)

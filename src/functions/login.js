@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 const BASE_URL = require("../api/apiConfig");
-
+const chalk = require("chalk");
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 /**
@@ -16,7 +16,7 @@ async function login(email, password) {
     });
     const token = response.data.token;
     console.log("\n");
-    console.log("Login successful!\n");
+    console.log(chalk.green("Login successful!\n"));
 
     const authData = {
       token: token,

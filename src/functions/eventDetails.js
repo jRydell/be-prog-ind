@@ -4,7 +4,7 @@ const fs = require("fs");
 const BASE_URL = require("../api/apiConfig");
 const inquirer = require("inquirer");
 const eventPrompt = require("../prompts/eventPrompt");
-
+const chalk = require("chalk");
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 /**
@@ -35,7 +35,7 @@ async function eventDetails() {
 
     const event = eventResponse.data;
     console.log("\n");
-    console.log("Event Details:\n");
+    console.log(chalk.green("Event Details:\n"));
     console.log(`Title: ${event.title}`);
     console.log(`Description: ${event.description}`);
     console.log(`Date: ${event.date}`);
