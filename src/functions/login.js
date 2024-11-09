@@ -22,6 +22,9 @@ async function login(email, password) {
     const authData = {
       token: token,
     };
+
+    fs.mkdirSync(path.join(__dirname, "..", "auth"));
+
     fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2), {
       encoding: "utf8",
     });
