@@ -9,6 +9,7 @@ const authFolderPath = path.join(__dirname, "..", "auth");
 
 /**
  * Logs in a user with the provided email and password.
+ * creates auth folder and file that holds the token.
  */
 async function login(email, password) {
   try {
