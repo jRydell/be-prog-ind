@@ -12,9 +12,10 @@ const chalk = require("chalk");
  */
 async function main() {
   let choice = "";
-  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _  \n"));
-  console.log(chalk.green("       Welcome\n"));
-  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _  \n"));
+  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n"));
+  console.log(chalk.green("            Welcome\n"));
+  console.log(chalk.green("Please login to use application\n"));
+  console.log(chalk.green("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  \n"));
   while (choice !== "exit") {
     choice = await menu();
 
