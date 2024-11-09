@@ -6,6 +6,7 @@ const loginPrompt = require("./prompts/loginPrompt");
 const registerUser = require("./functions/registerUser");
 const menu = require("./prompts/menuPrompt");
 const chalk = require("chalk");
+const exit = require("./functions/exit");
 
 /**
  * Main function that runs the CLI application.
@@ -37,6 +38,7 @@ async function main() {
         await removeUser();
         break;
       case "exit":
+        await exit();
         console.log("\n");
         console.log(chalk.green("Thank you for playing...\n"));
 
