@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const BASE_URL = require("../api/apiConfig");
 const chalk = require("chalk");
+
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
 
 /**
@@ -21,16 +22,19 @@ async function login(email, password) {
     const authData = {
       token: token,
     };
-
     fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2), {
       encoding: "utf8",
     });
 
     return token;
   } catch (error) {
-    console.log("\n");
-    console.error("Login failed:", error.response?.data || error.message);
-    console.log("\n");
+    if (error.response) {
+      console.error("Error:", error.response.data.message);
+    }
+    if (error.request) {
+      console.log("\n");
+      console.error("Error: server offline \n");
+    }
   }
 }
 
