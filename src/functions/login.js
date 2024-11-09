@@ -12,6 +12,11 @@ const authFolderPath = path.join(__dirname, "..", "auth");
  */
 async function login(email, password) {
   try {
+    if (fs.existsSync(authFilePath)) {
+      console.log("\n");
+      console.log(chalk.green("Already logged in\n"));
+      return;
+    }
     const response = await axios.post(`${BASE_URL}/users/login`, {
       email,
       password,
@@ -39,7 +44,9 @@ async function login(email, password) {
     return token;
   } catch (error) {
     if (error.response) {
+      console.log("\n");
       console.error("Error:", error.response.data.message);
+      console.log("\n");
     } else if (error.request) {
       console.error("Error: Could not reach server.");
     } else {
