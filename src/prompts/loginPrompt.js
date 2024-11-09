@@ -7,9 +7,9 @@ const inquirer = require("inquirer");
 async function loginPrompt() {
   const questions = [
     {
-      type: "email",
-      name: "email",
-      message: "Enter your e-mail:",
+      type: "username",
+      name: "username",
+      message: "Enter your username:",
     },
     {
       type: "password",

@@ -33,11 +33,7 @@ async function listEvents() {
   } catch (error) {
     if (error.response) {
       console.log("\n");
-      console.error(
-        `Error: ${error.response.status} - ${JSON.stringify(
-          error.response.data
-        )}`
-      );
+      console.error("Error:", error.response.data.message);
       console.log("\n");
     } else {
       console.log("\n");
