@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
 
+/**
+ * Prompts the user to select an event from a list of events.
+ */
 function eventPrompt(events) {
   return inquirer.prompt([
     {

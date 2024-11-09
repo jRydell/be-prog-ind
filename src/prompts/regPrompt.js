@@ -1,5 +1,9 @@
 const inquirer = require("inquirer");
 
+/**
+ * Prompts the user to select an event from a list of events.
+ *
+ */
 async function selectEvent(events) {
   const eventChoices = events.map((event) => ({
     name: event.title,

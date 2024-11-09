@@ -1,5 +1,9 @@
 const inquirer = require("inquirer");
 
+/**
+ * Prompts the user to enter their email and password.
+ *
+ */
 async function loginPrompt() {
   const questions = [
     {

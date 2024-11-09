@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
 
+/**
+ * Displays a menu prompt to the user and returns the selected option.
+ */
 async function menu() {
   const { choice } = await inquirer.prompt([
     {
