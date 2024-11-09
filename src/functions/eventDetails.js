@@ -59,7 +59,7 @@ async function eventDetails() {
       console.log("\n");
     } else {
       console.log("\n");
-      console.error("Error fetching event details:", error.message);
+      console.error("Error fetching event details, please login");
       console.log("\n");
     }
   }

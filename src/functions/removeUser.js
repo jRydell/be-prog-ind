@@ -77,7 +77,7 @@ async function removeUser() {
       console.log("\n");
     } else {
       console.log("\n");
-      console.error("Error removing user:", error.message);
+      console.error("Error removing user, please login");
       console.log("\n");
     }
   }

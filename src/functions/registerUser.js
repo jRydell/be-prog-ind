@@ -57,7 +57,7 @@ async function registerUser() {
       console.log("\n");
     } else {
       console.log("\n");
-      console.error("Error registering user:", error.message);
+      console.error("Error registering user, please login");
       console.log("\n");
     }
   }

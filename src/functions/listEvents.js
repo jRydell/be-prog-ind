@@ -41,7 +41,7 @@ async function listEvents() {
       console.log("\n");
     } else {
       console.log("\n");
-      console.error("Error fetching events:", error.message);
+      console.error("Error fetching events, please login");
       console.log("\n");
     }
   }
