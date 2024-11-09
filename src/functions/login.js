@@ -5,6 +5,7 @@ const BASE_URL = require("../api/apiConfig");
 const chalk = require("chalk");
 
 const authFilePath = path.join(__dirname, "..", "auth", "auth.json");
+const authFolderPath = path.join(__dirname, "..", "auth");
 
 /**
  * Logs in a user with the provided email and password.
@@ -17,26 +18,32 @@ async function login(email, password) {
     });
     const token = response.data.token;
     console.log("\n");
-    console.log(chalk.green("Login successful!\n"));
 
     const authData = {
       token: token,
     };
 
-    fs.mkdirSync(path.join(__dirname, "..", "auth"));
+    if (!fs.existsSync(authFolderPath)) {
+      fs.mkdirSync(authFolderPath);
+    }
 
-    fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2), {
-      encoding: "utf8",
-    });
+    if (fs.existsSync(authFolderPath)) {
+      fs.writeFileSync(authFilePath, JSON.stringify(authData, null, 2), {
+        encoding: "utf8",
+      });
+      console.log(chalk.green("Login successful!\n"));
+    } else {
+      console.log(chalk.red("Login failed\n"));
+    }
 
     return token;
   } catch (error) {
     if (error.response) {
       console.error("Error:", error.response.data.message);
-    }
-    if (error.request) {
-      console.log("\n");
-      console.error("Error: server offline \n");
+    } else if (error.request) {
+      console.error("Error: Could not reach server.");
+    } else {
+      console.error("Error:", error.message);
     }
   }
 }
