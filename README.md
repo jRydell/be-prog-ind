@@ -14,7 +14,7 @@ https://github.com/RobinNygren/event-planning-api
 
 Use npm start to run the program.
 
-Select options from the menu, choose exit to stop running the program.
+First you have to login then you can select options from the menu, choose exit to stop running the program.
 If you dont have a registrered user, use account bellow:
 
 username: johan
