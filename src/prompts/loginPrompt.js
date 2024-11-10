@@ -10,12 +10,24 @@ async function loginPrompt() {
       type: "username",
       name: "username",
       message: "Enter your username:",
+      validate: (input) => {
+        if (!input) {
+          return "username cannot be empty.";
+        }
+        return true;
+      },
     },
     {
       type: "password",
       name: "password",
       message: "Enter your password:",
       mask: "*",
+      validate: (input) => {
+        if (!input) {
+          return "password cannot be empty.";
+        }
+        return true;
+      },
     },
   ];
 

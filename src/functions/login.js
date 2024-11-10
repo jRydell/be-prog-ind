@@ -49,7 +49,8 @@ async function login(email, password) {
       console.error("Error:", error.response.data.message);
       console.log("\n");
     } else if (error.request) {
-      console.error("Error: Could not reach server.");
+      console.log("\n");
+      console.error("Error: Could not reach server.\n");
     } else {
       console.error("Error:", error.message);
     }
