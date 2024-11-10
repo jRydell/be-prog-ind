@@ -30,7 +30,7 @@ Att hantera fel är viktigt för en klientapplikation eftersom det gör programm
 
 ### 2.
 
-Ett utav dom extra npm-paket jag installerat är chalk, vilket används för att färglägga texten i terminalen. Jag använde chalk för att göra statusmeddelanden som "Login successful" gröna och felmeddelanden röda samt styling. Detta ger tydlig feedback till användaren och gör det enklare att se när något gått fel eller lyckats i applikationen. Chalk var inte absolut nödvändigt, men det förbättrar användarupplevelsen och ger ett trevligare utseende.
+Ett utav dom extra npm-paket jag installerat är chalk, vilket används för att färglägga texten i terminalen. Jag använde chalk för att göra statusmeddelanden som "Login successful" gröna och felmeddelanden röda samt styling. Detta ger tydlig feedback till användaren och gör det enklare att se när något gått fel eller lyckats. Chalk var inte absolut nödvändigt, men det förbättrar användarupplevelsen och ger ett trevligt utseende.
 
 ### 3.
 
