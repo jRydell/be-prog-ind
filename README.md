@@ -25,7 +25,7 @@ password: 12345
 
 ### 1.
 
-Mitt program hanterar fel vid API-anrop genom att omge varje funktion som gör ett anrop med try-catch block. Om fel uppstår vid anrop, fångas det i catch blocket, där ett meddelande skrivs ut till användaren. Felmeddelandena kommer från error.response.datan från api:et om det finns annars kastas ett hårdkodat.
+Mitt program hanterar fel vid API-anrop men hjälp av axios genom att omge varje funktion som gör ett anrop med try-catch block. Om fel uppstår vid anrop, fångas det i catch blocket, där ett meddelande skrivs ut till användaren. Felmeddelandena kommer från error.response.datan från servern om den svarar med en felstatus, för andra fel kastas ett hårdkodat. (Jag har inte satt upp axios felhantering helt korrekt men nu får det va så.)
 
 Det är viktigt med felhantering eftersom det gör programmet mer användarvänligt och robust. Utan felhantering riskerar programmet att krasha och användaren förstår inte heller vad som går fel.
 
