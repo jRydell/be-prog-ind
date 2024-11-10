@@ -32,7 +32,7 @@ Att hantera fel är viktigt för en klientapplikation eftersom det gör programm
 
 Ett utav dom extra npm-paket jag installerat är chalk, vilket används för att färglägga texten i terminalen. Jag använde chalk för att göra statusmeddelanden som "Login successful" gröna och felmeddelanden röda samt styling. Detta ger tydlig feedback till användaren och gör det enklare att se när något gått fel eller lyckats i applikationen. Chalk var inte absolut nödvändigt, men det förbättrar användarupplevelsen och ger ett trevligare utseende.
 
-### 3. Beskriv ett problem du stötte på under utvecklingen av detta klientprogram och hur du löste det. Vad lärde du dig av detta?
+### 3.
 
 Ett problem jag stötte på var att jag ville att man skulle kunna välja på namn ur en lista vid registrering och borttagning av användare, men participants arrayen på events innehåller endast användarnas ID, så det listades bara ut id:n.
 För att lösa problemet fick jag lägga till ett extra api anrop för att hämta ut namnen baserat på id, från user endpointen istället för event endpointen.
