@@ -18,6 +18,7 @@ First you have to login then you can select options from the menu, choose exit t
 If you dont have a registrered user, use account bellow:
 
 username: johan
+
 password: 12345
 
 ## Frågor
