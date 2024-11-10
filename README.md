@@ -24,7 +24,7 @@ password: 12345
 
 ### 1.
 
-Mitt program hanterar fel vid API-anrop genom att omge varje funktion som gör ett anrop med try-catch block. Om fel uppstår vid anrop, fångas det i catch blocket, där ett meddelande skrivs ut till användaren. Felmeddelandena kommer från error.response.data om de är tillgängliga, vilket gör att användaren lättare kan förstå orsaken till felet.
+Mitt program hanterar fel vid API-anrop genom att omge varje funktion som gör ett anrop med try-catch block. Om fel uppstår vid anrop, fångas det i catch blocket, där ett meddelande skrivs ut till användaren. Felmeddelandena kommer från error.response.data om de är tillgängliga, vilket gör att användaren lättare kan förstå orsaken till felet. Det finns också viss felhantering med if satser och hårdkodade meddelanden.
 
 Att hantera fel är viktigt för en klientapplikation eftersom det gör programmet mer användarvänligt och robust. Utan felhantering riskerar programmet att krasha och användaren förstår inte heller vad som går fel.
 
